@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>box-sizing</title>
+    <style>
+        div {
+            margin: 50px 0;
+        }
+        
+        div:nth-child(1) {
+            /* 传统盒子模型 width+padding+border */
+            /* box-sizing: centent-box; */
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 20px;
+            border: 10px solid blue;
+        }
+        
+        div:nth-child(2) {
+            /* 有了这句话可以让 盒子变成css3模型  设置border和padding不会再撑大盒子*/
+            /* 盒子大小 =width */
+            /* css3属性   网页端会有兼容性问题 */
+            box-sizing: border-box;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 20px;
+            border: 10px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+</body>
+
+</html>
