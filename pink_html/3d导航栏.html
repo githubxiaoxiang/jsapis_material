@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3d导航栏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        ul {
+            margin: 100px;
+        }
+        
+        ul li {
+            float: left;
+            margin: 0 5px;
+            width: 120px;
+            height: 36px;
+            /* 一会需要给box 旋转 也需要透视 干脆给li添加透视  里面的子盒子都有透视效果*/
+            perspective: 500px;
+        }
+        
+        .box {
+            /* 子绝父相 */
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: all 0.4s;
+        }
+        
+        .box:hover {
+            transform: rotateX(90deg);
+        }
+        
+        .front,
+        .bottom {
+            /* 子绝父相 */
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            line-height: 36px;
+        }
+        
+        .front {
+            background-color: pink;
+            z-index: 1;
+            transform: translateZ(18px);
+        }
+        
+        .bottom {
+            background-color: blue;
+            /* 这个x轴一定是负值 */
+            /* 如果有移动或者其他样式 ，必须先写移动 */
+            transform: translateY(18px) rotateX(-90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>
+                <div class="box">
+                    <div class="front">游戏中心</div>
+                    <div class="bottom">游戏中心</div>
+                </div>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <div class="box">
+                    <div class="front">直播</div>
+                    <div class="bottom">直播</div>
+                </div>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <div class="box">
+                    <div class="front">漫画</div>
+                    <div class="bottom">漫画</div>
+                </div>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <div class="box">
+                    <div class="front">赛事</div>
+                    <div class="bottom">赛事</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
