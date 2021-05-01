@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+    <title>京东手机商城</title>
+    <!-- 引入css初始化文件 -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- 引入首页的css -->
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+    <!-- 顶部 -->
+
+    <header class="app">
+        <ul>
+            <li onclick="appJump(1)"><img src="images/close.png" alt="" /></li>
+            <li><img src="images/logo.png" alt="" /></li>
+            <li>打开京东App，购物更轻松</li>
+            <li onclick="appJump(2)">立即打开</li>
+        </ul>
+    </header>
+</body>
+
+<script>
+    appJump = function(index) {
+        let urls = ["http://www.baidu.com", "https://www.163.com/"];
+        if (urls && urls.length >= index) {
+            window.location.href = urls[index - 1];
+        }
+    };
+</script>
+
+</html>
