@@ -193,3 +193,16 @@ div {
     background-color: #ccc;
     /* border-right: 1px solid #ccc; */
 }
+
+.sou {
+    position: absolute;
+    top: 8px;
+    left: 50px;
+    width: 18px;
+    height: 15px;
+    /* -----2倍精灵图缩放做法-------  重要重要重要 */
+    /* 1.先等比例缩放1倍图片（如原图400*200  缩放后为200*100） 2缩小后再量放大镜在图片中的位置 */
+    background: url(../images/jd-sprites.png) no-repeat -81px 0;
+    /* 由于-81px 0是相对缩放后的图片 故加载的该图片尺寸css中需要设置为一般大小（缩小一倍） */
+    background-size: 200px;
+}
