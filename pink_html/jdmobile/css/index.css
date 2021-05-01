@@ -120,25 +120,76 @@ div {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: pink;
+    /* background-color: pink; */
     width: 40px;
     height: 44px
 }
 
+.search-btn::before {
+    /*  伪类 需要带content*/
+    content: "";
+    /* 行内元素 设置为块元素 才能设置宽高 */
+    display: block;
+    width: 20px;
+    height: 18px;
+    background: url(../images/s-btn.png) no-repeat;
+    /* 原图尺寸较大  设置宽高 */
+    /* background-size: 20px 18px; */
+    /* 百分比写法 */
+    background-size: 100% 100%;
+    margin: 14px 0 0 15px
+}
+
 .search-login {
+    /* 定位 */
     position: absolute;
     top: 0;
     right: 0;
-    background-color: pink;
+    /* background-color: pink; */
+    /* 宽高 */
     width: 40px;
     height: 44px;
+    /* 文本 */
+    line-height: 44px;
+    text-align: center;
+    color: #fff;
 }
 
 .search {
+    /* 父相 */
+    position: relative;
     height: 30px;
     background-color: #fff;
     margin: 0 50px;
     border-radius: 15px;
     /* (44-30)/2 */
     margin-top: 7px;
+}
+
+.jd-icon {
+    /* 子绝   定位*/
+    position: absolute;
+    top: 8px;
+    left: 13px;
+    /* 宽高 */
+    width: 20px;
+    height: 15px;
+    /* 图片 */
+    background: url(../images/jd.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.jd-icon::after {
+    /* 用伪类 可以不用额外增加标签 图标后面的小竖线 */
+    content: "";
+    /* 定位 */
+    position: absolute;
+    top: 0;
+    left: 26px;
+    display: block;
+    height: 16px;
+    /* 设置宽度+背景 或者 设置1像素的右边框 */
+    width: 1px;
+    background-color: #ccc;
+    /* border-right: 1px solid #ccc; */
 }
