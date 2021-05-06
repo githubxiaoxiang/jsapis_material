@@ -215,3 +215,81 @@ div {
 .local-nav li .local-nav-icon-icon5 {
     background-position: 0 -128px;
 }
+
+
+/* nav部分 */
+
+.nav {
+    /* 圆角处理 圆角+隐藏 */
+    overflow: hidden;
+    margin: 0 4px 3px;
+    border-radius: 8px;
+    /* 不设置高度  有nav-common 设置高度 撑开*/
+}
+
+.nav-common {
+    display: flex;
+    height: 88px;
+    /* background-color: pink; */
+}
+
+
+/* 中间一个元素 设置上下边距 */
+
+.nav-common:nth-child(2) {
+    margin: 3px 0;
+}
+
+.nav-items {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* 不冲突的 */
+    flex: 1;
+}
+
+
+/* -n+2就是选择前面两个元素 */
+
+.nav-items:nth-child(-n+2) {
+    border-right: 1px solid #fff;
+}
+
+.nav-items a {
+    flex: 1;
+    text-align: center;
+    line-height: 44px;
+    font-size: 14px;
+    color: #fff;
+    /* 文字阴影 */
+    text-shadow: 1px 1px rgba(0, 0, 0, .2);
+}
+
+.nav-items a:nth-child(1) {
+    border-bottom: 1px solid #fff;
+}
+
+
+/* 第一列的a不需要边框*/
+
+.nav-items:nth-child(1) a {
+    border: 0;
+    /* 图片  */
+    background: url(../images/hotel.png) no-repeat bottom center;
+    background-size: 121px auto;
+}
+
+
+/* 渐变背景色 */
+
+.nav-common:nth-child(1) {
+    background: -webkit-linear-gradient(left, #FA5A55, #FA994D);
+}
+
+.nav-common:nth-child(2) {
+    background: -webkit-linear-gradient(left, #4B90ED, #53BCED);
+}
+
+.nav-common:nth-child(3) {
+    background: -webkit-linear-gradient(left, #34C2A9, #6CD559);
+}
