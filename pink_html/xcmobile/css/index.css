@@ -76,6 +76,9 @@ div {
     clear: both;
 }
 
+
+/* 搜索模块 */
+
 .search-index {
     display: flex;
     /* 固定定位跟父级没有关系 它以屏幕为准 */
@@ -151,4 +154,16 @@ div {
     background-size: 104px auto;
     /* 左右居中 */
     margin: 4px auto -2px;
+}
+
+
+/* 焦点图模块 */
+
+.focus {
+    /* search是固定定位 会遮挡focus 设置上内边距未search的高度 顶下来 */
+    padding-top: 44px;
+}
+
+.focus img {
+    width: 100%;
 }
