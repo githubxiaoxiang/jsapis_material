@@ -1,0 +1,154 @@
+body {
+    width: 100%;
+    max-width: 540px;
+    min-width: 320px;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+    font: normal 14px/1.5 Tahoma, "Lucida Grande", Verdana, "Microsoft Yahei", STXihei, hei;
+    color: #000;
+    overflow-x: hidden;
+}
+
+* {
+    /*点击高亮我们需要清除清除  设置为transparent 完成透明*/
+    -webkit-tap-highlight-color: transparent;
+    /* 去除点击input框时显示的边框 */
+    outline: none;
+}
+
+
+/*在移动端浏览器默认的外观在iOS上加上这个属性才能给按钮和输入框自定义样式*/
+
+input {
+    -webkit-appearance: none;
+}
+
+
+/* input框autocomplete开启后 input框补全后去除默认背景颜色
+要没有 也可以设置 input标签增加 autocomplete="off" */
+
+input:-internal-autofill-previewed,
+input:-internal-autofill-selected {
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+
+
+/*禁用长按页面时的弹出菜单*/
+
+img,
+a {
+    -webkit-touch-callout: none;
+}
+
+a {
+    color: #666;
+    /* 链接去除下划线 */
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    /* 清除点 */
+    list-style: none;
+}
+
+
+/* 插图居中 */
+
+img {
+    /* 设置vertical-align防止图片产生空白缝隙 */
+    vertical-align: middle;
+}
+
+div {
+    /* css3盒子模型 */
+    box-sizing: border-box;
+}
+
+.clearfix:after {
+    /* 清除浮动 */
+    content: '';
+    display: block;
+    visibility: hidden;
+    height: 0;
+    line-height: 0;
+    clear: both;
+}
+
+.search-index {
+    display: flex;
+    /* 固定定位跟父级没有关系 它以屏幕为准 */
+    position: fixed;
+    top: 0;
+    /* 居中处理 */
+    left: 50%;
+    transform: translateX(-50%);
+    /* 固定的盒子应该有宽度 */
+    width: 100%;
+    min-width: 320px;
+    max-width: 540px;
+    height: 44px;
+    /* background-color: pink; */
+    background-color: #F6F6F6;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.search {
+    /* 子绝父相   search::before用了绝对定位 */
+    position: relative;
+    height: 26px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /* flex布局  占除user的剩余部分 */
+    flex: 1;
+    /* 文本样式 上下居中 */
+    font-size: 12px;
+    color: #666;
+    /* css3模型  高度不取26px 包含了边框了 26px-2px（边框） */
+    line-height: 24px;
+    /* 7px = 44px-26px-2px-2px   容器高-search高-search边框-search阴影*/
+    margin: 7px 10px;
+    /* 内边距 文字左偏移25px */
+    padding-left: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.search::before {
+    content: '';
+    /* 加了绝对定位的  直接可以设置宽高 */
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    /* 不能设置块级  加了块级 同属块级元素的文字会换行 */
+    /* display: block; */
+    /* 设置了position绝对定位 margin不起作用 */
+    /* margin: 5px; */
+    width: 15px;
+    height: 15px;
+    background: url(../images/sprite.png) no-repeat -59px -279px;
+    background-size: 104px auto;
+}
+
+.user {
+    width: 44px;
+    height: 44px;
+    font-size: 12px;
+    color: #2eaae0;
+    /* 左右居中 */
+    text-align: center;
+}
+
+.user::before {
+    content: '';
+    display: block;
+    width: 23px;
+    height: 23px;
+    /* 精灵图设置方法 */
+    background: url(../images/sprite.png) no-repeat -59px -194px;
+    /* 2倍图 缩放 */
+    background-size: 104px auto;
+    /* 左右居中 */
+    margin: 4px auto -2px;
+}
