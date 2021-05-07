@@ -1,0 +1,23 @@
+@border: 5px - 2;
+@baseFont: 50px;
+html {
+  font-size: @baseFont;
+}
+.header {
+  width: 200px - 50;
+  height: 200px;
+  background-color: pink;
+  border: @border solid #fff - #222;
+}
+
+.nav {
+  // 浏览器显示 不同单位的width值 有问题
+  //   width: 15rem / @baseFont;
+  width: 1.5rem + @baseFont; //51.5rem;
+  height: 200px;
+  background-color: blue;
+}
+
+// 1.运算的左右两边需要敲一个空格隔开
+// 2.两个数参与运算，如果只有一个数有单位，则最后结果以这个单位为准
+// 3.两个数参与运算，如果两个都有单位且不一样，则最后的结果以前面一个单位为准
