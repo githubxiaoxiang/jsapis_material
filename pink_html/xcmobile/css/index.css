@@ -326,3 +326,79 @@ div {
     background: url(../images/subnav-bg.png) no-repeat 0 0;
     background-size: 28px auto;
 }
+
+
+/* sales-box" */
+
+.sales-box {
+    margin: 4px;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+}
+
+.sales-hd {
+    position: relative;
+    height: 44px;
+    border-bottom: 1px solid #ccc;
+}
+
+.sales-hd h2 {
+    position: relative;
+    text-indent: -999px;
+    overflow: hidden;
+}
+
+.sales-hd h2::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    width: 79px;
+    height: 15px;
+    background: url(../images/hot.png) no-repeat 0 -20px;
+    background-size: 79px auto;
+}
+
+.more {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    padding: 3px 20px 3px 10px;
+    font-size: 14px;
+    color: #fff;
+    background: -webkit-linear-gradient(left, #FF506C, #FF6BC6);
+    border-radius: 8px;
+}
+
+.more::after {
+    content: "";
+    /* 定位 */
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    /* 设置宽高 */
+    width: 7px;
+    height: 7px;
+    /* 三角 */
+    border-top: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+    transform: rotate(45deg);
+}
+
+.row {
+    display: flex;
+}
+
+.row a {
+    flex: 1;
+    border-bottom: 1px solid #eee;
+}
+
+.row a:nth-child(1) {
+    border-right: 1px solid #eee;
+}
+
+.row a img {
+    /* 设置图片与父级宽度一致  即row a各占一半 */
+    width: 100%;
+}
