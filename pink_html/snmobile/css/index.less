@@ -2,3 +2,11 @@
 @import "common";
 // @import 导入的意思 可以把一个样式文件导入到另外一个样式文件里面
 // link 是把一个 样式文件引入到 html页面里面
+body {
+  min-width: 320px;
+  //不用设置max-width 因为common.less最顶上加了 html {font-size: 50px;}  设计稿如果是750px 则写死的宽度为 15rem = 750px/50   15rem*50 =750
+  width: 15rem;
+  line-height: 1.5;
+  font-family: Arial, Helvetica;
+  background: #f2f2f2;
+}
