@@ -11,9 +11,9 @@ html {
 }
 
 .nav {
-  // 浏览器显示 不同单位的width值 有问题
-  //   width: 15rem / @baseFont;
-  width: 1.5rem + @baseFont; //51.5rem;
+  // 新的除法要加括号 不然生效不了
+  width: (150rem / @baseFont);
+  //   width: 1.5rem + @baseFont; //51.5rem;
   height: 200px;
   background-color: blue;
 }
