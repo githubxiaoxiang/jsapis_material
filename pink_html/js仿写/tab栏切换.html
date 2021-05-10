@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tab栏切换</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style-type: none;
+        }
+        
+        .tab {
+            width: 978px;
+            margin: 100px auto;
+        }
+        
+        .tab-list {
+            height: 39px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        
+        .tab-list ul {}
+        
+        .tab-list ul li {
+            float: left;
+            padding: 0 10px;
+            height: 39px;
+            text-align: center;
+            line-height: 39px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        .tab-list .current {
+            background-color: red;
+            color: #fff;
+        }
+        
+        .clearfix::after {
+            content: "";
+            display: block;
+            overflow: hidden;
+            visibility: hidden;
+            height: 0;
+            line-height: 0;
+            clear: both;
+        }
+        
+        .item {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab-list">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价（50000）</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab-icon">
+            <div class="item" style="display: block">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+    </div>
+    <script>
+        var tabList = document.querySelector(".tab-list");
+        var lis = tabList.querySelectorAll("li");
+        var items = document.querySelectorAll(".item");
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].setAttribute("index", i);
+            lis[i].onclick = function() {
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = "";
+                }
+
+                this.className = "current";
+                var index = this.getAttribute("index");
+                for (var i = 0; i < items.length; i++) {
+                    items[i].style.display = "none";
+                }
+
+                items[index].style.display = "block";
+            };
+        }
+    </script>
+</body>
+
+</html>
