@@ -1,0 +1,74 @@
+body {
+    min-width: 320px;
+    max-width: 750px;
+    /* flexible给我们划分了10等分 */
+    width: 10rem;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-family: Arial, Helvetica;
+    background: #f2f2f2;
+}
+
+a {
+    text-decoration: none;
+    font-size: .333333rem;
+}
+
+
+/* 这个插件默认的html文字大小 cssroot  16px  需要在设置中设置为75  划分为10等分  才能正确的转化rem*/
+
+
+/* 如果我们的屏幕超过了750px我们就按照 750设计稿 来走  不会让我们的页面超过750px */
+
+@media screen and (min-width:750px) {
+    html {
+        /* 由于flexibale优先级更高  所以需要加入!important强制生效 */
+        font-size: 75px!important;
+    }
+}
+
+.search-content {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10rem;
+    height: 1.173333rem;
+    background-color: #FFC001;
+}
+
+.classify {
+    width: .586667rem;
+    height: 1.173333rem;
+    margin: .146667rem .333333rem .093333rem;
+    background: url(../images/classify.png) no-repeat;
+    background-size: .586667rem .933333rem;
+}
+
+.search {
+    flex: 1;
+}
+
+.search input {
+    outline: none;
+    border: 0;
+    width: 100%;
+    height: .88rem;
+    margin-top: .16rem;
+    background-color: #fff2cc;
+    border-radius: 0.44rem;
+    font-size: .333333rem;
+    color: #757575;
+    padding-left: .733333rem;
+}
+
+.login {
+    width: 1rem;
+    height: .933333rem;
+    margin: .133333rem;
+    line-height: .933333rem;
+    text-align: center;
+    font-size: .333333rem;
+    color: #fff;
+}
