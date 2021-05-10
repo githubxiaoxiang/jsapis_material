@@ -86,3 +86,46 @@ body {
     }
   }
 }
+
+// nav部分  flex实现
+// nav {
+//   display: flex;
+//   flex-wrap: wrap;
+//   a {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     flex: 20%;
+//     margin-bottom: (5rem / @baseFont);
+//     img {
+//       width: (82rem / @baseFont);  //flex布局不用转block 可直接设置行内img宽高
+//       height: (82rem / @baseFont);
+//     }
+//     span {
+//       font-size: (25rem / @baseFont);
+//       color: #333;
+//       padding-top: (10rem / @baseFont);
+//     }
+//   }
+// }
+
+// nav部分  float实现
+nav {
+  width: (750rem / @baseFont);
+  a {
+    float: left;
+    width: (150rem / @baseFont);
+    height: (140rem / @baseFont);
+    text-align: center;
+    img {
+      display: block;
+      width: (82rem / @baseFont);
+      height: (82rem / @baseFont);
+      margin: (10rem / @baseFont) auto 0;
+    }
+    span {
+      font-size: (25rem / @baseFont);
+      color: #333;
+    }
+  }
+}
