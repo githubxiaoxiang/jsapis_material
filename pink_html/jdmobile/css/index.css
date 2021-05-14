@@ -27,6 +27,15 @@ input {
 }
 
 
+/* input框autocomplete开启后 input框补全后去除默认背景颜色
+要没有 也可以设置 input标签增加 autocomplete="off" */
+
+input:-internal-autofill-previewed,
+input:-internal-autofill-selected {
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+
+
 /*禁用长按页面时的弹出菜单*/
 
 img,
