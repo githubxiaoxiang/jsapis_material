@@ -12,11 +12,11 @@ body {
     color: #666;
 }
 
-
-/*点击高亮我们需要清除清除  设置为transparent 完成透明*/
-
 * {
+    /*点击高亮我们需要清除清除  设置为transparent 完成透明*/
     -webkit-tap-highlight-color: transparent;
+    /* 去除点击input框时显示的边框 */
+    outline: none;
 }
 
 
@@ -201,8 +201,31 @@ div {
     width: 18px;
     height: 15px;
     /* -----2倍精灵图缩放做法-------  重要重要重要 */
-    /* 1.先等比例缩放1倍图片（如原图400*200  缩放后为200*100） 2缩小后再量放大镜在图片中的位置 */
+    /* 1.先等比例缩放1倍图片（如原图400*200  缩放后为200*100） 2缩小后再量放大镜在图片中的位置  或者2倍图量完位置除以2应该也可以 */
     background: url(../images/jd-sprites.png) no-repeat -81px 0;
-    /* 由于-81px 0是相对缩放后的图片 故加载的该图片尺寸css中需要设置为一般大小（缩小一倍） */
+    /* 由于-81px 0是相对缩放后的图片 故加载的该图片尺寸css中需要设置为一半大小（缩小一倍） */
     background-size: 200px;
+}
+
+
+/* 修改输入框默认文本样式 */
+
+input::-webkit-input-placeholder {
+    /* color: red; */
+    font-size: 14px;
+}
+
+.search input {
+    position: absolute;
+    top: 0;
+    left: 90px;
+    width: 273px;
+    height: 30px;
+    /* 去除placeholder外的边框 */
+    border: 0;
+    /* 去除输入框背景色 */
+    background: none;
+    font-size: 12px;
+    line-height: 30px;
+    color: #232326;
 }
