@@ -4,9 +4,9 @@ body {
     min-width: 320px;
     margin: 0 auto;
     /* 正式背景颜色 */
-    /* background-color: #fff; */
+    background-color: #fff;
     /* 测试用背景颜色 */
-    background-color: #ccc;
+    /* background-color: #ccc; */
     font-family: -apple-system, Helvetica, sans-serif;
     line-height: 1.5;
     color: #666;
@@ -60,7 +60,7 @@ ul {
 /* 插图居中 */
 
 img {
-    /* 防止图片产生空白缝隙 */
+    /* 设置vertical-align防止图片产生空白缝隙 */
     vertical-align: middle;
 }
 
@@ -290,4 +290,46 @@ nav a img {
 nav a span {
     /* 行内转为 块元素 和图片分两行 */
     display: block;
+}
+
+
+/* 新闻部分 */
+
+.news {
+    margin-top: 20px;
+}
+
+.news a {
+    float: left;
+    /* 第2,3增加了做边框线 默认content-box会撑大盒子 改用css3盒子模型 */
+    box-sizing: border-box;
+}
+
+.news img {
+    /* a设置宽度  img保持100% */
+    width: 100%;
+}
+
+.news a:nth-child(1) {
+    width: 50%;
+}
+
+
+/* .news a:nth-child(2),
+.news a:nth-child(3),
+{
+    width: 25%;
+} */
+
+
+/* n+2 就是从从2个往后面选 */
+
+.news a:nth-child(n+2) {
+    width: 25%;
+    /* 增加左边框线 */
+    border-left: 1px solid #ccc;
+}
+
+.news img {
+    width: 100%;
 }
