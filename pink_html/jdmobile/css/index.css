@@ -60,6 +60,7 @@ ul {
 /* 插图居中 */
 
 img {
+    /* 防止图片产生空白缝隙 */
     vertical-align: middle;
 }
 
@@ -118,10 +119,18 @@ div {
     background-color: #F63515;
 }
 
+
+/* 搜索 */
+
 .search-wrap {
-    position: relative;
+    /* 改成固定 轮播图才能顶上来 */
+    position: fixed;
     /* 子盒子 search 加了margin-top  会出现外边距合并 在父盒子中加overflow:hidden */
     overflow: hidden;
+    /* 固定位置 需要设置宽度 */
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
     height: 44px;
 }
 
@@ -237,4 +246,48 @@ input::-webkit-input-placeholder {
     font-size: 12px;
     line-height: 30px;
     color: #232326;
+}
+
+.slider img {
+    width: 100%;
+}
+
+
+/* 品牌日 */
+
+.brand {
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+}
+
+.brand div {
+    float: left;
+    width: 33.33%;
+}
+
+.brand div img {
+    width: 100%;
+}
+
+
+/* nav 部分 */
+
+nav {
+    padding-top: 5px;
+}
+
+nav a {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+nav a img {
+    width: 40px;
+    margin: 10px 0;
+}
+
+nav a span {
+    /* 行内转为 块元素 和图片分两行 */
+    display: block;
 }
